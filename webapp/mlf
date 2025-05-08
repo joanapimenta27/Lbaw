@@ -1,0 +1,7 @@
+ id | author_id |        date         | is_public |    title    |               description               | like_num | flick_num | share_num |                                 tsvectors                                 
+----+-----------+---------------------+-----------+-------------+-----------------------------------------+----------+-----------+-----------+---------------------------------------------------------------------------
+  2 |         2 | 2024-11-25 00:00:00 | f         | Second Post | Description for the second post         |        1 |         0 |         0 | 'description':3B 'post':2A,7B 'second':1A,6B 'the':5B
+  1 |         1 | 2024-11-25 00:00:00 | t         | First Post  | This is the first post description      |        3 |         0 |         1 | 'description':8B 'first':1A,6B 'is':4B 'post':2A,7B 'the':5B 'this':3B
+  3 |         3 | 2024-11-25 00:00:00 | t         | Third Post  | This is a public third post description |        0 |         2 |         1 | 'description':9B 'is':4B 'post':2A,8B 'public':6B 'third':1A,7B 'this':3B
+(3 rows)
+

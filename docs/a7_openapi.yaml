@@ -1,0 +1,579 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: 'Flick Web API'
+  description: 'Web Resources Specification (A7) for Flick'
+
+servers:
+  - url: http://127.0.0.1:8000
+    description: Production server
+
+tags:
+  - name: 'M01:Authentication'
+  - name: 'M02:Users and Profiles'
+  - name: 'M03:User administration and static pages'
+  - name: 'M04:Posts'
+  - name: 'M05:Messages and Groups'
+
+paths:
+  /:
+    get:
+      operationId: WelcomePage
+      summary: 'Welcome Page'
+      description: 'Displays the welcome page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '200':
+          description: 'Welcome page displayed successfully.'
+
+  /login:
+    get:
+      operationId: LoginPage
+      summary: 'Login Page'
+      description: 'Displays the login form. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      responses:
+        '200':
+          description: 'Login form displayed successfully.'
+    post:
+      operationId: UserLogin
+      summary: 'User Login'
+      description: 'Authenticates user credentials. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'User email.'
+                password:
+                  type: string
+                  description: 'User password.'
+              example:
+                email: user@example.com
+                password: securepassword123
+      responses:
+        '200':
+          description: 'User authenticated successfully.'
+        '401':
+          description: 'Unauthorized. Invalid credentials.'
+
+  /logout:
+    get:
+      operationId: UserLogout
+      summary: 'Logout User'
+      description: 'Logs out the authenticated user. Access: AUTH.'
+      tags:
+        - 'M01:Authentication'
+      responses:
+        '200':
+          description: 'User logged out successfully.'
+
+  /register:
+    get:
+      operationId: RegisterPage
+      summary: 'Register Page'
+      description: 'Displays the registration form. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      responses:
+        '200':
+          description: 'Registration form displayed successfully.'
+    post:
+      operationId: UserRegistration
+      summary: 'Register User'
+      description: 'Creates a new user account. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Full name of the user.'
+                email:
+                  type: string
+                  description: 'User email.'
+                password:
+                  type: string
+                  description: 'Password for the account.'
+              example:
+                name: Jane Doe
+                email: jane.doe@example.com
+                password: securepassword123
+      responses:
+        '201':
+          description: 'User account created successfully.'
+        '400':
+          description: 'Invalid input data.'
+
+  /users/{userId}/profile:
+    get:
+      operationId: ViewUserProfile
+      summary: 'View User Profile'
+      description: 'Displays the profile of a user. Access: PUBLIC or AUTH.'
+      tags:
+        - 'M02:Users and Profiles'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user whose profile is to be displayed.'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'User profile retrieved successfully.'
+
+  /users/{userId}/profile/sendfriendrequest:
+    post:
+      operationId: SendFriendRequest
+      summary: 'Send Friend Request'
+      description: 'Allows a user to send a friend request. Access: AUTH.'
+      tags:
+        - 'M02:Users and Profiles'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user to send a friend request to.'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'Friend request sent successfully.'
+
+  /add-post:
+    get:
+      operationId: ShowAddPostForm
+      summary: 'Add Post Form'
+      description: 'Displays the form for adding a new post. Access: AUTH.'
+      tags:
+        - 'M04:Posts'
+      responses:
+        '200':
+          description: 'Add post form displayed successfully.'
+    post:
+      operationId: AddNewPost
+      summary: 'Create New Post'
+      description: 'Allows authenticated users to create a new post. Access: AUTH.'
+      tags:
+        - 'M04:Posts'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Title of the post.'
+                content:
+                  type: string
+                  description: 'Content of the post.'
+                is_public:
+                  type: boolean
+                  description: 'Visibility of the post.'
+              example:
+                title: My First Post
+                content: 'This is the content of the post.'
+                is_public: true
+      responses:
+        '201':
+          description: 'Post created successfully.'
+
+  /404:
+    get:
+      operationId: NotFoundPage
+      summary: '404 Not Found Page'
+      description: 'Displays the 404 error page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '404':
+          description: 'Error page displayed successfully.'
+  /comments/{id}:
+    get:
+      operationId: GetComment
+      summary: 'View Comment'
+      description: 'Retrieve details of a specific comment by ID. Access: PUBLIC.'
+      tags:
+        - 'M04:Posts'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 'ID of the comment.'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'Comment retrieved successfully.'
+    delete:
+      operationId: DeleteComment
+      summary: 'Delete Comment'
+      description: 'Delete a specific comment by ID. Access: AUTH.'
+      tags:
+        - 'M04:Posts'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 'ID of the comment to delete.'
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 'Comment deleted successfully.'
+
+  /update-session:
+    post:
+      operationId: UpdateSession
+      summary: 'Update User Session'
+      description: 'Updates user session data for JavaScript redirection purposes. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                intendedUrl:
+                  type: string
+                  description: 'URL to redirect after session update.'
+                redirectReason:
+                  type: string
+                  description: 'Reason for the redirection.'
+              example:
+                intendedUrl: '/home'
+                redirectReason: 'Session expired.'
+      responses:
+        '200':
+          description: 'Session updated successfully.'
+
+  /recoverPassword:
+    get:
+      operationId: ShowRecoverPasswordForm
+      summary: 'Recover Password Form'
+      description: 'Displays the form to recover a user password. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      responses:
+        '200':
+          description: 'Recover password form displayed successfully.'
+    post:
+      operationId: RecoverPassword
+      summary: 'Recover Password'
+      description: 'Process to recover a user password. Access: PUBLIC.'
+      tags:
+        - 'M01:Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Email associated with the user account.'
+              example:
+                email: user@example.com
+      responses:
+        '200':
+          description: 'Password recovery process initiated.'
+
+  /groups:
+    post:
+      operationId: CreateGroup
+      summary: 'Create Group'
+      description: 'Allows authenticated users to create a new group. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the group.'
+              example:
+                name: 'Project Team'
+      responses:
+        '201':
+          description: 'Group created successfully.'
+
+  /groups/{group}:
+    put:
+      operationId: UpdateGroup
+      summary: 'Update Group'
+      description: 'Allows authenticated users to update group information. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      parameters:
+        - name: group
+          in: path
+          required: true
+          description: 'ID of the group to update.'
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Updated name of the group.'
+              example:
+                name: 'Updated Project Team'
+      responses:
+        '200':
+          description: 'Group updated successfully.'
+    delete:
+      operationId: DeleteGroup
+      summary: 'Delete Group'
+      description: 'Allows authenticated users to delete a group. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      parameters:
+        - name: group
+          in: path
+          required: true
+          description: 'ID of the group to delete.'
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 'Group deleted successfully.'
+
+  /sharePost:
+    post:
+      operationId: SharePost
+      summary: 'Share Post'
+      description: 'Allows authenticated users to share a post with others. Access: AUTH.'
+      tags:
+        - 'M04:Posts'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: integer
+                  description: 'ID of the post to share.'
+                recipientId:
+                  type: integer
+                  description: 'ID of the recipient.'
+              example:
+                postId: 123
+                recipientId: 456
+      responses:
+        '200':
+          description: 'Post shared successfully.'
+
+  /search-liveG:
+    get:
+      operationId: LiveSearchGroups
+      summary: 'Live Search Groups'
+      description: 'Provides live search functionality for groups. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      responses:
+        '200':
+          description: 'Live search results retrieved successfully.'
+
+  /send-invites:
+    post:
+      operationId: SendGroupInvites
+      summary: 'Send Group Invites'
+      description: 'Allows authenticated users to send invitations to join a group. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: integer
+                  description: 'ID of the group.'
+                emails:
+                  type: array
+                  items:
+                    type: string
+                  description: 'List of email addresses to invite.'
+              example:
+                groupId: 123
+                emails: ['user1@example.com', 'user2@example.com']
+      responses:
+        '200':
+          description: 'Invitations sent successfully.'
+
+  /delete-users:
+    post:
+      operationId: DeleteGroupMembers
+      summary: 'Delete Group Members'
+      description: 'Allows authenticated users to remove members from a group. Access: AUTH.'
+      tags:
+        - 'M05:Messages and Groups'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: integer
+                  description: 'ID of the group.'
+                userIds:
+                  type: array
+                  items:
+                    type: integer
+                  description: 'List of user IDs to remove.'
+              example:
+                groupId: 123
+                userIds: [456, 789]
+      responses:
+        '200':
+          description: 'Group members removed successfully.'
+
+  /about:
+    get:
+      operationId: AboutPage
+      summary: 'About Page'
+      description: 'Displays the About page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '200':
+          description: 'About page displayed successfully.'
+
+  /contact:
+    get:
+      operationId: ContactPage
+      summary: 'Contact Page'
+      description: 'Displays the Contact page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '200':
+          description: 'Contact page displayed successfully.'
+
+  /terms:
+    get:
+      operationId: TermsPage
+      summary: 'Terms and Conditions Page'
+      description: 'Displays the Terms and Conditions page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '200':
+          description: 'Terms and Conditions page displayed successfully.'
+
+  /privacy:
+    get:
+      operationId: PrivacyPage
+      summary: 'Privacy Policy Page'
+      description: 'Displays the Privacy Policy page. Access: PUBLIC.'
+      tags:
+        - 'M03:User administration and static pages'
+      responses:
+        '200':
+          description: 'Privacy Policy page displayed successfully.'
+
+  /deleteUser/{userId}:
+    delete:
+      operationId: DeleteUser
+      summary: 'Delete User'
+      description: 'Allows administrators to delete a user account. Access: ADMIN.'
+      tags:
+        - 'M03:User administration and static pages'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user to delete.'
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 'User deleted successfully.'
+
+  /removeAdmin/{userId}:
+    delete:
+      operationId: RemoveAdmin
+      summary: 'Remove Admin Privileges'
+      description: 'Allows administrators to remove admin privileges from a user. Access: ADMIN.'
+      tags:
+        - 'M03:User administration and static pages'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user to modify.'
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 'Admin privileges removed successfully.'
+
+  /AdminBlockUser/{userId}:
+    post:
+      operationId: BlockUserAdmin
+      summary: 'Block User (Admin)'
+      description: 'Allows administrators to block a user. Access: ADMIN.'
+      tags:
+        - 'M03:User administration and static pages'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user to block.'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'User blocked successfully.'
+
+  /AdminUnblockUser/{userId}:
+    delete:
+      operationId: UnblockUserAdmin
+      summary: 'Unblock User (Admin)'
+      description: 'Allows administrators to unblock a user. Access: ADMIN.'
+      tags:
+        - 'M03:User administration and static pages'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 'ID of the user to unblock.'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'User unblocked successfully.'

@@ -1,0 +1,60 @@
+.tittle-friendpage{
+    color: #fff;
+}
+
+
+.friends-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.friends-page h1 {
+    margin-bottom: 20px;
+}
+
+.friends-page ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friends-page li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+.friends-page li a {
+    text-decoration: none;
+    color: #00263f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.friends-page ul li a p {
+    color: #00263f;
+}
+
+.friends-page li img.profile-pic {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.friends-page li p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.friends-page ul p {
+    color: #f0f0f0;
+}

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000f17;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;  
+}
+
+.error-container {
+    text-align: center;
+    background-color: #00263f; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px; 
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.error-container h1 {
+    font-size: 100px;
+    margin-bottom: 20px;
+    color: #00FFFF;
+}
+
+.error-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ddd; 
+}
+
+.redirect-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #bbb; 
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 16px;
+    color: #00FFFF; 
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #00FFFF;
+    color: #000f17;
+    text-decoration: none;
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .error-container h1 {
+        font-size: 80px;
+    }
+
+    .error-message, .redirect-message {
+        font-size: 14px;
+    }
+
+    .back-link {
+        font-size: 14px;
+    }
+}

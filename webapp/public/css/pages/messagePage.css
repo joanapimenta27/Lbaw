@@ -1,0 +1,118 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000f17;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-M {
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #00263f;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #001f2d;
+    border-radius: 10px;
+    max-height: 70vh;
+    height: 400px; 
+}
+
+
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #001f2d;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-container input {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+}
+
+.input-container button {
+    background-color: #006494;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container button:hover {
+    background-color: #0077b6;
+}
+
+
+.button-add {
+    display: inline-block;          
+    background-color: #00a0c0;      
+    color: #f0f0f0;                
+    padding: 8px 16px;              
+    font-size: 14px;                
+    text-decoration: none;          
+    border-radius: 5px;             
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;      
+    cursor: pointer; 
+    margin-top: 10px;             
+    margin-right: 20px;             
+}
+
+/* Hover state */
+.button-add:hover {
+    background-color: #00ffff;      
+    color: #00263f;                
+}
+
+
+.button-add:active {
+    background-color: #00dddd;     
+    color: #00263f;                 
+}
+
+
+.button-add {
+    float: right;                   
+    margin-top: 10px;                
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .button-add {
+        font-size: 12px;             
+        padding: 6px 12px;           
+    }
+}

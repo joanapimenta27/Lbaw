@@ -1,0 +1,143 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #00263f;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.comment-header span {
+    padding: 0px 10px;
+}
+
+.comment-profile-pic {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid #00FFFF;
+    object-fit: cover;
+}
+
+.no-comments-message {
+    color: #f0f0f0;
+}
+
+.comment-author {
+    color: #f0f0f0;
+    font-weight: bolder;
+}
+
+.comment-date {
+    margin-left: auto;
+    color: #00a0c0;
+}
+
+.comment-content {
+    position: relative;
+}
+.comment-text {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    color: #f0f0f0;
+    max-height: 140px;  
+    overflow: hidden;
+}
+.show-more-button {
+    background: none;
+    border: none;
+    color: #00a0c0;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+}
+.show-more-button:hover {
+    color: #00ffff;
+}
+
+.comment-text.expanded {
+    max-height: none;
+}
+
+
+.comment-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.comment-actions i {
+    color: #f0f0f0;
+    transition: transform 0.1s ease;
+}
+
+.comment-actions i:hover {
+    transform: scale(1.1);
+}
+
+.comment-actions i {
+    color: #f0f0f0;
+}
+
+.comment-actions span {
+    color: #f0f0f0;
+}
+
+.comment-like-button {
+    background: none;
+    border: none;
+    padding: 0;  
+    margin: 0; 
+    cursor: pointer;  
+    outline: none;  
+    box-shadow: none;  
+    color: inherit;      
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.comment-edited-label {
+    font-size: 0.8rem;
+    margin-left: auto;
+    font-style: italic;
+}
+
+.show-replies-button {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: #f0f0f0;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.hide-replies-button {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: #f0f0f0;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.replies-container {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #00263f;
+}
+
+.comment-reply {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}

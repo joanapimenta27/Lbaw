@@ -1,0 +1,99 @@
+.edit-frame {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-button {
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.hamburger-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Advanced Filters Menu */
+.advanced-filters {
+    background: #f8f8f8;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 100%; /* Position to the right */
+    transform: translateX(-100%); /* Adjust positioning for dropdown */
+    width: 200px; /* Set width of dropdown */
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000; /* Ensure dropdown is above other elements */
+}
+
+.edit-frame:hover .advanced-filters {
+    display: block; /* Show dropdown on hover */
+}
+
+.advanced-filters h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.advanced-filters ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.advanced-filters li {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.edit-option {
+    margin: 10px 0;
+    padding: 8px;
+    text-align: left;
+}
+
+.edit-option a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.edit-option a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff;
+}
+
+.edit-text {
+    flex-grow: 1;
+}
+
+.checkmark {
+    color: #28a745; /* Green checkmark */
+    font-size: 16px;
+    font-weight: bold;
+}

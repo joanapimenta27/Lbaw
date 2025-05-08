@@ -1,0 +1,205 @@
+header {
+    background-color: #000f17;
+    border-bottom: 1px solid #00ffff;
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+   
+}
+.logo-container-header {
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    width: 50px; 
+    height: auto; 
+}
+
+.nav-middle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-middle ul {
+    position: absolute;
+    list-style: none;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-middle ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 14px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-middle ul li a:hover {
+    color: #00ffff;
+}
+
+.icons-right {
+    display: flex;
+    align-items: center;
+}
+
+.icons-right a {
+    margin-left: 15px;
+    color: #f0f0f0;
+}
+.admin-button {
+    content: #f0f0f0;
+}
+
+.icons-right i {
+    font-size: 24px;
+}
+
+.multiple-icons-right-container {
+    display: flex;
+    align-items: center;
+}
+
+.condensed-icons-right-container{
+    display: none;
+}
+
+.condensed-icons-right-container .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #00263f;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1200;
+}
+
+.condensed-icons-right-container .dropdown-menu.hidden {
+    display: none;
+}
+.condensed-icons-right-container .toggle-menu-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0px 0px 0px 8px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.search-bar input {
+    border: none;
+    padding: 5px; 
+    font-size: 16px; 
+    outline: none;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-bar button {
+    background-color: #00a0c0;
+    color: #f0f0f0;
+    border: none;
+    padding: 15px;
+    font-size: 16px; 
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #00ffff;
+    color: #00263f;
+}
+
+.search-input{
+    background-color: #f0f0f0;
+}
+
+.feed-not-logged {
+    white-space: nowrap;
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.feed-btn {
+    color: #f0f0f0;
+}
+
+@media (max-width: 500px) {
+    .condensed-icons-right-container{
+        display: block;
+        justify-content: center;
+    }
+
+    .multiple-icons-right-container{
+        display: none;
+    }
+    .icons-right a {
+        margin: 0px;
+    }
+}
+
+
+.dropdown-notifications{
+    position: relative;
+    display: inline-block;
+}
+#notification-button{
+    color: #fff;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.notification-content{
+    display: none;
+    position: absolute;
+    background-color: f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.notification-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.notification-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown-notifications:hover .notification-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown-notifications:hover #notification-button {background-color: #3e8e41;}

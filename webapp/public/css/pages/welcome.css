@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    max-width: 15%;
+    align-self: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.left-section, .right-section {
+    box-sizing: border-box;
+}
+
+.left-section {
+    background: url("/images/FlickBanner.png") no-repeat center center;
+    background-size: cover;
+    background-color: #00263f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section {
+    background-color: #00263f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

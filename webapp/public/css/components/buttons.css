@@ -1,0 +1,374 @@
+/* CSS FOR BUTTONS */
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+.button-XL {
+    font-size: 1.5rem;
+    padding: 20px 40px;
+}
+.button-L {
+    font-size: 1.25rem;
+    padding: 20px 40px;
+}
+.button-M {
+    font-size: 1rem;
+    padding: 12px 24px;
+}
+
+.button-width-200 {
+    width: 200px;
+}
+.button-width-250 {
+    width: 250px;
+}
+.button-width-300 {
+    width: 300px;
+}
+.button-width-400 {
+    width: 400px;
+}
+.button-width-500 {
+    width: 500px;
+}
+
+.button-width-100p {
+    width: 100%;
+}
+
+.primary-btn {
+    background-color: #00a0c0;
+    color: #f0f0f0;
+}
+
+.primary-btn:hover {
+    background-color: #00ffff;
+    color: #00263f;
+    text-decoration: none;
+}
+
+.primary-btn:active {
+    background-color: #00dddd;
+    color:#00263f;
+}
+
+.secondary-btn {
+    background-color: #dad5c9;
+    color: #00263f;
+}
+
+.secondary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.secondary-btn:active {
+    background-color: #ffffff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-post-link {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px 50px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    size: 20px;
+}
+
+.sidebar .search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-filters {
+    display: flex;
+    gap: 200px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px ;
+}
+
+.search-filters button {
+    flex: 1;
+    padding: 10px 30px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.search-filters button:hover {
+    transform: scale(1.1);
+    background-color: #ccc;
+}
+.search-filters .active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.icons-right a {
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons-right a:hover {
+    transform: scale(1.1);
+    color: #00ffff;
+}
+
+.icons-right a:active {
+    transform: scale(1.1);
+    color: #00a0c0;
+}
+
+.aside-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex: 1;
+}
+
+.sidebar .loginregister {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    justify-content: center; 
+    align-items: center;
+    margin: 20px 0;
+    flex: 1; 
+}
+
+.sidebar .button-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sidebar .loginregister a:hover {
+    background-color: #00ffff; 
+}
+
+.sidebar .loginregister a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    background-color: #f0f0f0; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    color: #00263f; 
+    padding: 13px 80px;
+    transition: 0.3s;
+    width: 90%;
+    white-space: nowrap;
+}
+
+.aside-buttons a {
+    text-align: center;
+    background-color: #f4f4f4; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    color: #333; 
+    padding: 13px 80px;
+}
+
+.post-actions button {
+    padding: 10px 20px;
+    background-color: transparent;
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+    transform: scale(1.4);
+}
+
+.active {
+    font-size: 16px !important;
+    font-weight: bolder;
+    color: #00d5ff !important;
+}
+
+.blank-button {
+    background: none;
+    border: none;
+    padding: 0;  
+    margin: 0; 
+    cursor: pointer;  
+    outline: none;  
+    box-shadow: none;  
+    color: inherit;      
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+
+
+.trash-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white; 
+    color: red; 
+    border: 2px solid red; 
+    border-radius: 10px; 
+    padding: 5px 10px;
+    margin:10px 15px 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    cursor: pointer;
+    font-size: 14px; 
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.trash-button img {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(94%) saturate(7485%) hue-rotate(-4deg) brightness(96%) contrast(105%);
+}
+
+.trash-button:hover {
+    transform: scale(1.1); 
+    background-color: #ffe6e6; 
+}
+
+.trash-button:active {
+    transform: scale(1); 
+}
+
+.blank-button:hover {
+    transform: scale(1.10);
+}
+
+.blank-button:active {
+    transform: scale(0.95);
+}
+
+.button-right-spin {
+    animation: right-spin 0.3s ease-in-out;
+}
+
+.button-left-spin {
+    animation: left-spin 0.3s ease-in-out;
+}
+
+.underline-button {
+    background: none;
+    border: none;
+    padding: 0;  
+    margin: 0; 
+    cursor: pointer;  
+    outline: none;  
+    box-shadow: none;  
+    color: inherit;      
+    position: relative;
+}
+
+.underline-button::after {
+    content: ""; 
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0; 
+    height: 2px;
+    background-color: #f0f0f0;
+    opacity: 0;
+    transition: left 0.3s ease, right 0.3s ease, opacity 0.2s ease;
+}
+
+.underline-button:hover::after {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+@keyframes right-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(400deg);
+    }
+}
+
+@keyframes left-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-400deg);
+    }
+}
+
+
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #333333;
+  background: #dddddd;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  background: #cccccc;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

@@ -1,0 +1,89 @@
+/*  This is the default css file, that includes all the other ones that were created for organization  */
+
+@import './layouts/layout.css';
+
+@import './others/zap.css';
+
+@import './components/buttons.css';
+@import './components/text.css';
+@import './components/forms.css';
+@import './components/checkbox.css';
+@import './components/tooltip.css';
+
+@import './layouts/header.css';
+@import './layouts/footer.css';
+@import './layouts/post.css';
+@import './layouts/postView.css';
+@import './layouts/comment.css';
+
+@import './utilities/padders.css';
+@import './utilities/containers.css';
+@import './utilities/lines.css';
+@import './utilities/colors.css';
+
+@import './pages/home.css';
+@import './pages/welcome.css';
+@import './pages/searchpage.css';
+@import './pages/register.css';
+@import './pages/chatMenu.css';
+@import './pages/messagePage.css';
+@import './pages/profile.css';
+@import './pages/notification.css';
+@import './pages/verifycode.css';
+@import './pages/recoverPassword.css';
+@import './pages/friends.css';
+
+
+@import './others/toastyNotification.css';
+@import './others/burguerSearch.css';
+
+
+@import './errors/alertMessage.css';
+
+@import './layouts/broadcast.css';
+@import './layouts/reciver.css';
+
+
+@import './pages/groupCreate.css';
+
+@import './pages/addGroup.css';
+@import './others/burguerEditG.css';
+@import './pages/edit-group.css';
+
+.hidden {
+    display: none;
+}
+
+.blank_link{
+    text-decoration: none;
+}
+
+.mini-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #00FFFF; 
+    object-fit: cover;
+}
+
+/*---------------------------- Scroll Bar stylized ----------------------------------*/
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    background-color: #00263f; /* Background of the scrollbar */
+}
+
+/* Style the scroll thumb */
+::-webkit-scrollbar-thumb {
+    background: #00a0c0; /* Color of the scrollbar thumb */
+}
+
+/* Style the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00ffff; /* Darker color on hover */
+}
+
+/* Optional: Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #00263f; /* Background of the scrollbar track */
+}
+/*-----------------------------------------------------------------------------------*/

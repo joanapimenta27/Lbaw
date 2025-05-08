@@ -1,0 +1,78 @@
+.group-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+}
+
+.group-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: auto;
+}
+
+.group-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.group-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.group-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.group-form .create-group-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.group-form .create-group-button:hover {
+    background-color: #0056b3;
+}
+
+.group-form .success-message,
+.group-form .error-message {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.group-form .success-message {
+    color: green;
+}
+
+.group-form .error-message {
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .group-form {
+        width: 90%;
+    }
+}

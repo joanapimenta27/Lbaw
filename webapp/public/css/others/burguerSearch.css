@@ -1,0 +1,90 @@
+.filter-frame {
+    position: relative; 
+    display: inline-block; 
+}
+
+.hamburger-button {
+    font-size: 30px;
+    background: #00A0c0;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+    width: 200px; 
+}
+
+/* Advanced Filters Menu */
+.advanced-filters {
+    padding: 10px;
+    width: 100%; 
+    position: absolute;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-20%); 
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; 
+}
+
+.filter-frame:hover .advanced-filters {
+    display: block; 
+}
+
+.advanced-filters h3 {
+    font-size: 14px; 
+    font-weight: bold;
+    color: #333; 
+    margin: 0 0 10px 0;
+    text-align: left; 
+}
+
+.advanced-filters-S ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.advanced-filters-S li {
+    font-size: 14px; 
+    font-weight: bold;
+    color: #333; 
+    margin: 0 0 10px 0;
+}
+
+.filter-item {
+    margin: 10px 0;
+    padding: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.filter-item:hover {
+    background-color: #e0e0e0; 
+}
+
+.filter-item a {
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
+    padding: 8px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-item a:hover {
+    color: #0056b3; 
+}
+
+.filter-item:hover a {
+    background-color: #e0e0e0;
+}
+
+.filter-text {
+    flex-grow: 1;
+}
+
+.checkmark {
+    color: #28a745; 
+    font-size: 16px;
+    font-weight: bold;
+}

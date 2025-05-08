@@ -1,0 +1,126 @@
+.all-height-container {
+    display: flex;
+    height: 100vh;
+    
+}
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.container_flex_column {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.full-height-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-post-container {
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 80%;
+    height: 90%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    border-radius: 8px;
+}
+
+.form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    height: 100%;
+    padding: 20px;
+}
+
+#addpost-fc {
+    border-right: 2px solid #00263f;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-10p {
+    gap: 10%;
+}
+.gap-20p {
+    gap: 20%;
+}
+.gap-30p {
+    gap: 30%;
+}
+
+.side-additional-container{
+    position: relative;
+    bottom: 40%;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #00a0c0;
+    padding: 10px;
+    box-shadow: inset -10px 0px 15px -10px rgba(0, 0, 0, 0.5);
+}
+
+.basic-center-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.profile-post-container {
+    border-top: 5px solid #000f17;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    height: fit-content;
+    width: 100%;
+    padding:30px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.multiple-post-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-content: center;
+}
+
+.multiple-post-container > div {
+    max-height: 500px;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+@media (max-width: 800px) {
+    .multiple-post-container {
+        grid-template-columns: 1fr;
+    }
+}

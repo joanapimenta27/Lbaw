@@ -1,0 +1,10 @@
+#zap-effect {
+    position: absolute;
+    top: 37%;
+    left: 32%;
+    transform: rotate(290deg);
+    width: 12%;
+    height: 12%;
+    stroke: #00ffff;
+    filter: drop-shadow(0 0 10px #00ffff);
+}

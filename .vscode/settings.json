@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "swaggerviewer:openapi": "file:///home/rodrigo/lbaw24155/docs/a7_openapi.yaml"
+    }
+}

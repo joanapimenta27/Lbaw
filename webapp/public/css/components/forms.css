@@ -1,0 +1,131 @@
+.full-height-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+
+.text_input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #00ffff;
+    background: transparent;
+    outline: none;
+    font-size: 1.2rem;
+    transition: border-color 0.3s;
+}
+
+.text_input::placeholder {
+    color: #00263f;
+    font-size: 1.4rem;
+    font-family: Arial;
+}
+
+
+.text_input:focus {
+    border-bottom: 2px solid #0077ff;
+    box-shadow: 0 8px 8px -6px #0077ff80;
+    outline: none;
+    transition: border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.textarea_input {
+    resize: none;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.textarea_input:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 8px #0077ff80;
+}
+
+label {
+    padding-left: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-family: Arial;
+    color: #00263f;
+}
+
+.fake-label {
+    padding-left: 10px;
+    font-size: 1.4rem;
+    margin-top: 15px;
+    font-family: Arial;
+    color: #00263f;
+    font-weight: bolder;
+    cursor: default;
+}
+
+.form-group label {
+    display: block;
+}
+
+#content-btn {
+    width: 40%;
+    margin: 5px;
+}
+
+/* CONTENT SELECTION PART */
+.file-item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.file-number {
+    font-weight: bold;
+    color: #0077ff;
+}
+.file-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    font-style: italic;
+    color: #333;
+}
+.file-list-container {
+    margin: 5px;
+    border-radius: 8px;
+    padding: 15px;
+    border: 2px solid #00ffff;
+}
+.remove-btn {
+    margin-left: 10px;
+    color: #00263f;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    border: none;
+}
+.remove-btn:hover {
+    color: #00ffff;
+}
+.placeholder {
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+    height: 50px;
+    margin-bottom: 8px;
+}
+.dragged {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+/* END OF CONTENT SELECTION PART */
+
+#is_public{
+    position: relative;
+    left: -45%;
+    margin-left: 0;
+}

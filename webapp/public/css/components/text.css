@@ -1,0 +1,41 @@
+.text-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flick-title {
+    font-size: 9em;
+    font-weight: bold;
+    color: #00263f;
+}
+
+.title-description {
+    font-size: 2em;
+    font-style: oblique;
+    color: #00263f;
+}
+
+.general-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00263f;
+    margin-bottom: 30px;
+}
+
+.minimal-info{
+    padding: 10px;
+    font-size: 0.7rem;
+}
+
+.small-info {
+    font-size: 0.85rem;
+}
+
+.smaller-title{
+    color: #898989;
+    font-weight: bolder;
+    font-size: 1.8em;
+}

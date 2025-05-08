@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#user-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #001d2e;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+#user-search-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00e6ff;
+    text-align: center;
+}
+
+#search {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #005072;
+    border-radius: 6px;
+    background-color: #003552;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+#search::placeholder {
+    color: #007bff;
+    opacity: 0.8;
+}
+
+#user-list,
+#selected-users-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #003552;
+    border: 1px solid #005072;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+#user-list li,
+#selected-users-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #005072;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#user-list li:hover,
+#selected-users-list li:hover {
+    background-color: #00476a;
+    color: #00e6ff;
+}
+
+#send-invites-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00a0c0;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#send-invites-button:hover {
+    background-color: #00ffff;
+    color: #00263f;
+}
+
+#send-invites-button:active {
+    background-color: #00dddd;
+    color: #00263f;
+}
+
+@media (max-width: 768px) {
+    #user-search-container {
+        width: 95%;
+    }
+
+    #search {
+        font-size: 0.9rem;
+    }
+
+    #user-list li,
+    #selected-users-list li {
+        font-size: 0.9rem;
+    }
+
+    #send-invites-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+a {
+    text-decoration: none;
+    color: #00e6ff;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #00ffff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #00a0c0;
+}
+
+a.button-link {
+    display: inline-block;
+    background-color: #003552;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a.button-link:hover {
+    background-color: #00476a;
+    color: #00ffff;
+    transform: scale(1.05);
+}
+
+a.button-link:active {
+    background-color: #005072;
+    color: #00e6ff;
+}
