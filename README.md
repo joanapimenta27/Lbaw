@@ -2,5 +2,5 @@
 
 some features aren't completely implemented yet.
 
-[video here](https://user-images.githubusercontent.com/12345678/abcdefg-demo.mp4)
-[and here](https://user-images.githubusercontent.com/12345678/abcdefg-demo.mp4)
+[video here](https://github.com/joanapimenta27/Lbaw/blob/main/lbaw24155.mp4)
+[and here](https://github.com/joanapimenta27/Lbaw/blob/main/lbaw24155.mp4)
